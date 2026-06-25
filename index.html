@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube का Algorithm आपकी News Video को कैसे चुनता है? | सैंपल</title>
+<meta name="description" content="एक छोटे न्यूज़ creator के लिए: algorithm के चार signals जो तय करते हैं कि आपकी वीडियो फैलेगी या रुक जाएगी. BuildMyTribe की ओर से Kamal Mishra के लिए एक मुफ़्त सैंपल.">
+<meta property="og:title" content="YouTube का Algorithm आपकी News Video को कैसे चुनता है?">
+<meta property="og:description" content="चार signals जो तय करते हैं कि आपकी न्यूज़ वीडियो फैलेगी या रुक जाएगी.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"YouTube का Algorithm आपकी News Video को कैसे चुनता है?","inLanguage":"hi","author":{"@type":"Organization","name":"BuildMyTribe"},"about":"YouTube algorithm signals for news creators"}
+</script>
+<style>
+  :root{
+    --ink:#161b26; --ink2:#2b3242; --paper:#fbf9f5; --card:#ffffff;
+    --saffron:#d2691a; --saffron2:#b8551a; --line:#e6e2d9; --muted:#6a7284;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Noto Sans Devanagari","Inter",system-ui,sans-serif;line-height:1.75;font-size:18px;-webkit-font-smoothing:antialiased}
+  .en{font-family:"Inter",sans-serif}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* sample banner */
+  .ribbon{background:var(--ink);color:#fff;font-family:"Inter",sans-serif;font-size:12.5px;letter-spacing:.3px;text-align:center;padding:9px 16px}
+  .ribbon b{color:#f0b272}
+  .ribbon a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
+  /* masthead */
+  header.mast{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:30;backdrop-filter:saturate(1.1) blur(4px)}
+  .mast .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:"Inter",sans-serif;font-weight:700;letter-spacing:.5px;font-size:16px;display:flex;align-items:center;gap:8px}
+  .logo .tri{color:var(--saffron);font-size:13px}
+  .logo small{font-weight:500;color:var(--muted);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+  .mast .sec{font-family:"Inter",sans-serif;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+
+  /* hero */
+  .hero{padding:46px 0 14px}
+  .eyebrow{display:inline-block;font-family:"Inter",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--saffron2);border:1px solid var(--saffron);border-radius:40px;padding:4px 13px;margin-bottom:18px}
+  h1{font-family:"Tiro Devanagari Hindi","Noto Sans Devanagari",serif;font-weight:400;font-size:clamp(30px,5.4vw,46px);line-height:1.28;letter-spacing:.2px;margin-bottom:16px}
+  .dek{font-size:19px;color:var(--ink2);margin-bottom:22px}
+  .byline{display:flex;align-items:center;gap:12px;font-family:"Inter",sans-serif;font-size:13px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;margin-bottom:6px}
+  .byline .dot{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--saffron),#e8a04b);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:"Inter";font-size:13px}
+
+  /* audio */
+  .audio{margin:24px 0 8px;background:var(--ink);border-radius:14px;padding:16px 18px;color:#fff;display:flex;align-items:center;gap:15px}
+  .audio .pp{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--saffron);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .audio .pp svg{width:18px;height:18px;fill:#fff}
+  .audio .meta{flex:1;min-width:0}
+  .audio .meta .t{font-family:"Inter",sans-serif;font-weight:600;font-size:13px;letter-spacing:.3px}
+  .audio .meta .s{font-size:12px;color:#aeb6c6;font-family:"Inter",sans-serif}
+  .audio .bar{height:4px;background:#39414f;border-radius:3px;margin-top:9px;overflow:hidden;cursor:pointer}
+  .audio .bar i{display:block;height:100%;width:0;background:var(--saffron)}
+  .audio .time{font-family:"Inter";font-size:11px;color:#aeb6c6;margin-top:5px;display:flex;justify-content:space-between}
+
+  /* article */
+  article{padding:18px 0 10px}
+  article p{margin:0 0 20px}
+  article h2{font-family:"Tiro Devanagari Hindi","Noto Sans Devanagari",serif;font-weight:400;font-size:27px;line-height:1.35;margin:40px 0 14px;padding-top:8px}
+  .lead::first-letter{font-family:"Tiro Devanagari Hindi",serif;font-size:64px;line-height:.8;float:left;margin:8px 12px 0 0;color:var(--saffron)}
+  strong{font-weight:700}
+  .hl{background:linear-gradient(transparent 62%, #f6dcae 62%)}
+
+  /* infographic */
+  .infg{margin:30px 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 18px 40px -28px rgba(20,25,40,.4)}
+  .infg .ihead{background:var(--ink);color:#fff;padding:18px 22px}
+  .infg .ihead .t{font-family:"Noto Sans Devanagari";font-weight:700;font-size:20px}
+  .infg .ihead .s{font-family:"Inter";font-size:12px;color:#aeb6c6;margin-top:2px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:22px}
+  .sig{text-align:center;padding:8px 6px;border-radius:10px;transition:background .2s}
+  .sig:hover{background:#faf6ef}
+  .sig svg{width:74px;height:74px}
+  .sig .nm{font-weight:700;font-size:15px;margin-top:6px}
+  .sig .en{font-family:"Inter";font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--saffron2);font-weight:600}
+  .sig .ds{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:5px}
+  .infg .ifoot{background:#faf6ef;border-top:1px solid var(--line);padding:13px 22px;font-size:13px;color:var(--ink2)}
+  @media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* table */
+  .tbl{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .tbl th{background:var(--ink);color:#fff;text-align:left;padding:12px 15px;font-family:"Noto Sans Devanagari";font-weight:600;font-size:15px}
+  .tbl td{padding:12px 15px;border-top:1px solid var(--line);vertical-align:top;width:50%}
+  .tbl tr:nth-child(even) td{background:#faf6ef}
+  .tbl .yes{color:#1f7a4d;font-weight:700}
+  .tbl .no{color:#b23b3b;font-weight:700}
+
+  /* pullquote */
+  .pq{font-family:"Tiro Devanagari Hindi",serif;font-size:26px;line-height:1.5;color:var(--ink);border-left:4px solid var(--saffron);padding:6px 0 6px 22px;margin:34px 0}
+
+  /* quiz */
+  .quiz{margin:34px 0;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:24px 22px}
+  .quiz h3{font-family:"Noto Sans Devanagari";font-size:20px;margin-bottom:4px}
+  .quiz .q{margin:18px 0 6px;font-weight:600}
+  .quiz .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .quiz button.opt{font-family:"Noto Sans Devanagari";font-size:14px;border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 14px;cursor:pointer;transition:.15s}
+  .quiz button.opt:hover{border-color:var(--saffron)}
+  .quiz button.opt.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .quiz .res{margin-top:20px;background:#faf6ef;border-radius:11px;padding:16px 18px;display:none}
+  .quiz .res.show{display:block}
+  .quiz .res .score{font-family:"Inter";font-weight:700;font-size:15px;color:var(--saffron2)}
+
+  /* faq */
+  .faq{margin:30px 0}
+  .faq h2{margin-bottom:8px}
+  details{border-bottom:1px solid var(--line);padding:14px 0}
+  summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary .pl{color:var(--saffron);font-size:22px;transition:transform .2s;font-family:"Inter"}
+  details[open] summary .pl{transform:rotate(45deg)}
+  details p{margin-top:10px;color:var(--ink2);font-size:15.5px}
+
+  /* CTA */
+  .cta{margin:42px 0 10px;background:var(--ink);border-radius:18px;padding:34px 30px;color:#fff;text-align:center}
+  .cta .k{font-family:"Inter";font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#f0b272;margin-bottom:10px}
+  .cta h3{font-family:"Tiro Devanagari Hindi",serif;font-weight:400;font-size:26px;line-height:1.4;margin-bottom:10px}
+  .cta p{color:#c5ccd8;font-size:15px;max-width:520px;margin:0 auto 20px}
+  .cta a.btn{display:inline-block;background:var(--saffron);color:#fff;font-family:"Inter";font-weight:600;font-size:14px;text-decoration:none;padding:13px 26px;border-radius:10px}
+  .cta .who{font-family:"Inter";font-size:12px;color:#8b94a6;margin-top:16px}
+
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 50px;font-family:"Inter";font-size:12.5px;color:var(--muted);text-align:center}
+  footer b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="ribbon">★ एक मुफ़्त सैंपल — <b>BuildMyTribe</b> की ओर से <b>Kamal Mishra</b> के लिए। यही पूरा सेट (वीडियो + इन्फोग्राफिक + लेख) हर टॉपिक पर बनता है।</div>
+
+<header class="mast"><div class="wrap">
+  <div class="logo"><span class="tri">▲</span> BUILD MY TRIBE <small>sample</small></div>
+  <div class="sec">Explainer</div>
+</div></header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">Creator Playbook</span>
+    <h1>YouTube का Algorithm आपकी News Video को कैसे चुनता है?</h1>
+    <p class="dek">चार signals जो चुपचाप तय करते हैं कि आपकी खबर लाखों तक पहुँचेगी या दो सौ व्यूज़ पर रुक जाएगी।</p>
+    <div class="byline">
+      <span class="dot">KM</span>
+      <span>Kamal Mishra के लिए तैयार किया गया सैंपल &nbsp;·&nbsp; <span class="en">7 min read</span> &nbsp;·&nbsp; ऑडियो उपलब्ध</span>
+    </div>
+
+    <div class="audio" id="player">
+      <button class="pp" id="pp" aria-label="play"><svg id="ppi" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="meta">
+        <div class="t">2 मिनट की ऑडियो ब्रीफिंग</div>
+        <div class="s">पूरा लेख पढ़ने का समय नहीं? सुन लीजिए।</div>
+        <div class="bar" id="bar"><i id="fill"></i></div>
+        <div class="time"><span id="cur">0:00</span><span id="dur">2:00</span></div>
+      </div>
+      <audio id="aud" preload="metadata" src="briefing.mp3"></audio>
+    </div>
+  </section>
+
+  <section style="margin:14px 0 0">
+    <div style="border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px -28px rgba(20,25,40,.45)">
+      <video src="kamal_signals.mp4?v=3" controls playsinline preload="metadata" poster="poster.jpg?v=3" style="display:block;width:100%;height:auto;background:#10131b"></video>
+    </div>
+    <div style="font-family:'Inter',sans-serif;font-size:12.5px;color:var(--muted);text-align:center;margin-top:9px">13-सेकंड का explainer, ध्वनि के साथ — Play दबाएँ।</div>
+  </section>
+
+  <article>
+    <p class="lead">आपने रात भर मेहनत करके एक खबर पर वीडियो बनाई। एडिटिंग, थंबनेल, सब कुछ। और वो दो सौ व्यूज़ पर अटक गई। उधर किसी और का वैसा ही टॉपिक लाखों तक पहुँच गया। फ़र्क किस्मत का नहीं था। फ़र्क इस बात का था कि algorithm किन चीज़ों को देख रहा था, और आप किन चीज़ों को।</p>
+
+    <p>सबसे पहले एक ग़लतफ़हमी हटा दीजिए। <span class="hl">YouTube आपकी वीडियो को रैंक नहीं करता। वो दर्शकों के व्यवहार को रैंक करता है</span> — यानी लोग आपकी वीडियो के <em>आसपास</em> क्या करते हैं। क्लिक करते हैं या स्क्रॉल कर देते हैं, रुकते हैं या निकल जाते हैं, उसके बाद app छोड़ देते हैं या और देखते रहते हैं। ये चार behaviours ही असली signals हैं।</p>
+
+    <h2>चार signals, एक नज़र में</h2>
+    <p>नीचे वही चार चीज़ें हैं जिन्हें algorithm सबसे ज़्यादा तवज्जो देता है। हर एक को अलग से समझिए, फिर देखिए कौन-सा signal आपके हाथ में सबसे ज़्यादा है।</p>
+
+    <div class="infg" id="infg">
+      <div class="ihead">
+        <div class="t">Algorithm के 4 Signals</div>
+        <div class="s en">The same explainer, built to be saved and shared on Instagram & LinkedIn</div>
+      </div>
+      <div class="grid">
+        <div class="sig">
+          <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" fill="none" stroke="#efe9dd" stroke-width="3.4"/><circle class="ring" data-pct="82" cx="18" cy="18" r="15.5" fill="none" stroke="#d2691a" stroke-width="3.4" stroke-linecap="round" transform="rotate(-90 18 18)" stroke-dasharray="0 100"/><text x="18" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#161b26" font-family="Inter">1</text></svg>
+          <div class="nm">देखने का समय</div>
+          <div class="en">Watch time</div>
+          <div class="ds">लोग कितनी देर टिकते हैं, सिर्फ़ क्लिक नहीं।</div>
+        </div>
+        <div class="sig">
+          <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" fill="none" stroke="#efe9dd" stroke-width="3.4"/><circle class="ring" data-pct="68" cx="18" cy="18" r="15.5" fill="none" stroke="#d2691a" stroke-width="3.4" stroke-linecap="round" transform="rotate(-90 18 18)" stroke-dasharray="0 100"/><text x="18" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#161b26" font-family="Inter">2</text></svg>
+          <div class="nm">क्लिक दर</div>
+          <div class="en">Click rate</div>
+          <div class="ds">title और thumbnail खुलने लायक हैं या नहीं।</div>
+        </div>
+        <div class="sig">
+          <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" fill="none" stroke="#efe9dd" stroke-width="3.4"/><circle class="ring" data-pct="57" cx="18" cy="18" r="15.5" fill="none" stroke="#d2691a" stroke-width="3.4" stroke-linecap="round" transform="rotate(-90 18 18)" stroke-dasharray="0 100"/><text x="18" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#161b26" font-family="Inter">3</text></svg>
+          <div class="nm">सेशन पकड़</div>
+          <div class="en">Session pull</div>
+          <div class="ds">वीडियो के बाद दर्शक app पर बने रहते हैं?</div>
+        </div>
+        <div class="sig">
+          <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" fill="none" stroke="#efe9dd" stroke-width="3.4"/><circle class="ring" data-pct="49" cx="18" cy="18" r="15.5" fill="none" stroke="#d2691a" stroke-width="3.4" stroke-linecap="round" transform="rotate(-90 18 18)" stroke-dasharray="0 100"/><text x="18" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#161b26" font-family="Inter">4</text></svg>
+          <div class="nm">शुरुआती रफ़्तार</div>
+          <div class="en">Early velocity</div>
+          <div class="ds">पहले एक घंटे की प्रतिक्रिया कितनी तेज़।</div>
+        </div>
+      </div>
+      <div class="ifoot">रिंग सिर्फ़ इस बात का इशारा है कि छोटे creator के लिए हर signal पर असर डालना कितना आसान या मुश्किल है — बाएँ से दाएँ, आपका control कम होता जाता है।</div>
+    </div>
+
+    <h2>1. देखने का समय — सबसे भारी signal</h2>
+    <p>algorithm के लिए क्लिक सस्ता है, ध्यान महँगा। अगर लोग आपकी आठ मिनट की वीडियो में औसतन चालीस सेकंड बाद निकल जाते हैं, तो चाहे व्यूज़ जितने भी हों, अगली बार आपकी वीडियो कम लोगों तक दिखेगी। <strong>इसलिए लंबाई से ज़्यादा कसावट मायने रखती है।</strong> खबर को खींचिए मत, उसे चुस्त रखिए।</p>
+
+    <h2>2. क्लिक दर — पहला दरवाज़ा</h2>
+    <p>algorithm आपकी वीडियो को थोड़े-से लोगों को दिखाकर परखता है। अगर title और thumbnail उन्हें खोलने पर मजबूर नहीं करते, तो परीक्षा वहीं रुक जाती है। news में लालच नहीं, <strong>साफ़ सवाल</strong> चलता है — वो सवाल जो दर्शक के मन में पहले से है।</p>
+
+    <h2>3. सेशन पकड़ — आपकी वीडियो के बाद क्या</h2>
+    <p>YouTube चाहता है कि लोग app पर बने रहें। अगर आपकी वीडियो देखकर दर्शक एक और वीडियो देखता है, तो आपकी वीडियो ने platform का काम आसान किया। इसीलिए अंत में एक साफ़ अगला कदम देना — "ये भी देखिए" — आपके हक़ में जाता है।</p>
+
+    <h2>4. शुरुआती रफ़्तार — पहला घंटा</h2>
+    <p>पोस्ट करने के बाद का पहला घंटा सबसे संवेदनशील है। तेज़ शुरुआती प्रतिक्रिया algorithm को कहती है कि इसे और दिखाओ। यही वो जगह है जहाँ एक छोटी पर वफ़ादार audience बड़ी पर ठंडी audience से जीत जाती है।</p>
+
+    <p class="pq">"छोटे creator के पास सबसे बड़ा lever पहले तीस सेकंड हैं। उसे मज़बूत कीजिए, बाकी तीनों signals अपने आप सुधरने लगते हैं।"</p>
+
+    <h2>जो वीडियो चलती है बनाम जो रुक जाती है</h2>
+    <table class="tbl">
+      <tr><th>रुक जाती है</th><th>चलती है</th></tr>
+      <tr><td><span class="no">✕</span> लंबी भूमिका, असली बात दो मिनट बाद</td><td><span class="yes">✓</span> पहले 30 सेकंड में सवाल और दाँव साफ़</td></tr>
+      <tr><td><span class="no">✕</span> thumbnail पर बहुत सारा टेक्स्ट</td><td><span class="yes">✓</span> एक चेहरा, एक भाव, एक सवाल</td></tr>
+      <tr><td><span class="no">✕</span> अंत अचानक, कोई अगला कदम नहीं</td><td><span class="yes">✓</span> अंत में साफ़ "ये भी देखिए"</td></tr>
+      <tr><td><span class="no">✕</span> सिर्फ़ YouTube पर पड़ी रहती है</td><td><span class="yes">✓</span> Reels, इन्फोग्राफिक और लेख में बदलती है</td></tr>
+    </table>
+
+    <h2>एक खबर, चार जगह</h2>
+    <p>यही पूरा फ़ायदा तब मिलता है जब एक टॉपिक सिर्फ़ एक वीडियो बनकर न रह जाए। वही रिसर्च <strong>एक explainer वीडियो</strong>, <strong>एक इन्फोग्राफिक</strong> (जैसा ऊपर है), <strong>एक search-friendly लेख</strong> आपकी वेबसाइट पर, और <strong>छोटे Reels/Shorts</strong> बन जाती है। एक मेहनत, चार जगह मौजूदगी।</p>
+
+    <div class="quiz" id="quiz">
+      <h3>आपकी वीडियो algorithm-ready है?</h3>
+      <p style="font-size:14px;color:var(--muted);margin:0">तीन सवाल, दस सेकंड।</p>
+
+      <div class="q">1. आपकी असली बात कब शुरू होती है?</div>
+      <div class="opts" data-q="0"><button class="opt" data-v="1">पहले 30 सेकंड में</button><button class="opt" data-v="0">1–2 मिनट बाद</button></div>
+
+      <div class="q">2. thumbnail में क्या है?</div>
+      <div class="opts" data-q="1"><button class="opt" data-v="1">एक भाव, एक सवाल</button><button class="opt" data-v="0">कई लाइनों का टेक्स्ट</button></div>
+
+      <div class="q">3. खबर पोस्ट होने के बाद कहाँ-कहाँ जाती है?</div>
+      <div class="opts" data-q="2"><button class="opt" data-v="1">वीडियो + इन्फोग्राफिक + लेख</button><button class="opt" data-v="0">सिर्फ़ YouTube</button></div>
+
+      <div class="res" id="res"></div>
+    </div>
+
+    <div class="faq">
+      <h2>अक्सर पूछे सवाल</h2>
+      <details><summary>क्या ज़्यादा वीडियो डालने से रैंक सुधरता है? <span class="pl">+</span></summary><p>मात्रा से ज़्यादा निरंतरता और हर वीडियो की कसावट मायने रखती है। हफ़्ते में कम, पर मज़बूत वीडियो बेहतर हैं।</p></details>
+      <details><summary>क्या Hindi content global algorithm पर पिछड़ता है? <span class="pl">+</span></summary><p>नहीं। algorithm भाषा नहीं, व्यवहार देखता है। साफ़ हुक और कसावट हर भाषा में काम करती है।</p></details>
+      <details><summary>एक टॉपिक से कितने assets बन सकते हैं? <span class="pl">+</span></summary><p>आम तौर पर एक: long-form वीडियो, दो–तीन Shorts, एक इन्फोग्राफिक, और एक लेख। यही सेट BuildMyTribe आपके लिए बनाता और पोस्ट करता है।</p></details>
+    </div>
+
+    <div class="cta">
+      <div class="k">यह एक सैंपल है</div>
+      <h3>यही पूरा सेट, हर टॉपिक पर — आपके लिए बना और पोस्ट किया हुआ</h3>
+      <p>आप टॉपिक चुनिए या एक वॉइस नोट भेजिए। रिसर्च, वीडियो, इन्फोग्राफिक, लेख और शेड्यूल पर पोस्टिंग — बाकी सब हम संभालते हैं।</p>
+      <a class="btn en" href="mailto:tobiasboscob@gmail.com?subject=ION%20content%20engine%20%E2%80%94%20call">एक छोटी कॉल तय करें</a>
+      <div class="who en">Tobias Brown · Founder, BuildMyTribe · buildmytribe.io</div>
+    </div>
+  </article>
+</div>
+
+<footer>
+  एक मुफ़्त सैंपल, <b>BuildMyTribe</b> द्वारा <b>Kamal Mishra</b> के लिए तैयार किया गया। <br>
+  <span class="en">Sample explainer · topic, script, audio, infographic and article built as one package.</span>
+</footer>
+
+<script>
+// audio
+(function(){
+  var a=document.getElementById('aud'),pp=document.getElementById('pp'),ppi=document.getElementById('ppi'),
+      fill=document.getElementById('fill'),bar=document.getElementById('bar'),cur=document.getElementById('cur'),dur=document.getElementById('dur');
+  function fmt(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+  a.addEventListener('loadedmetadata',function(){dur.textContent=fmt(a.duration);});
+  pp.addEventListener('click',function(){ if(a.paused){a.play();ppi.innerHTML='<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';}else{a.pause();ppi.innerHTML='<path d="M8 5v14l11-7z"/>';}});
+  a.addEventListener('timeupdate',function(){var p=a.currentTime/a.duration*100;fill.style.width=p+'%';cur.textContent=fmt(a.currentTime);});
+  a.addEventListener('ended',function(){ppi.innerHTML='<path d="M8 5v14l11-7z"/>';fill.style.width='0%';});
+  bar.addEventListener('click',function(e){var r=bar.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*a.duration;});
+})();
+// infographic rings animate on view
+(function(){
+  var done=false;
+  function animate(){ if(done)return; done=true;
+    document.querySelectorAll('.ring').forEach(function(c){var pct=+c.dataset.pct;c.style.transition='stroke-dasharray 1.1s cubic-bezier(.2,.8,.2,1)';requestAnimationFrame(function(){c.setAttribute('stroke-dasharray',pct+' 100');});});
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)animate();});},{threshold:.4});
+  var t=document.getElementById('infg'); if(t)io.observe(t);
+})();
+// quiz
+(function(){
+  var ans=[null,null,null];
+  document.querySelectorAll('.opts').forEach(function(row){
+    var q=+row.dataset.q;
+    row.querySelectorAll('.opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        row.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+        b.classList.add('sel'); ans[q]=+b.dataset.v; show();
+      });
+    });
+  });
+  function show(){
+    if(ans.includes(null))return;
+    var sc=ans.reduce(function(a,b){return a+b;},0);
+    var res=document.getElementById('res'); res.classList.add('show');
+    var msg = sc===3 ? 'बढ़िया — आपकी आदतें algorithm के साथ हैं। अब इसे हर टॉपिक पर लगातार दोहराना ही असली खेल है।'
+            : sc===2 ? 'करीब ह�
